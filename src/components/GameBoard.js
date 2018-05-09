@@ -5,8 +5,8 @@ import images from "../images.json";
 class GameBoard extends React.Component {
     render() {
         return (
-            <div>
-                {images.map(image => <GameImage key={image.id} src={image.src} alt={image.name} />)}
+            <div className="row">
+                {images.map(image => <GameImage key={image.id} src={image.src} alt={image.name} scoreAdd={this.props.scoreAdd}/>)}
             </div>
         );
     }
