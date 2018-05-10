@@ -11,7 +11,7 @@ class GameImage extends React.Component {
 
     clickHandle = () => {
         const clicked = this.state.clicked;
-        this.setState({clicked: true});
+        this.setState({ clicked: true });
         this.props.clickHandle(clicked);
     }
 

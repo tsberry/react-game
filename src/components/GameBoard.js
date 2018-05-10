@@ -25,11 +25,11 @@ class GameBoard extends React.Component {
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
-        this.setState({images: array});
+        this.setState({ images: array });
     }
 
     clickHandle = (clicked) => {
-        if(!clicked) {
+        if (!clicked) {
             this.props.scoreAdd();
             this.shuffle();
         }
@@ -60,7 +60,7 @@ class GameBoard extends React.Component {
             <div className="row">
                 {this.state.images.map(image => <GameImage key={image.id} id={image.id} src={image.src} alt={image.name}
                     clickHandle={this.clickHandle}
-                    />)}
+                />)}
             </div>
         );
     }
