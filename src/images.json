@@ -1,62 +1,62 @@
 [
     {
         "id": 1,
-        "src": "https://timedotcom.files.wordpress.com/2016/06/game-of-thrones-facebook.jpg",
+        "src": "/assets/images/jonsnow.png",
         "name": "Jon Snow"
     },
     {
         "id": 2,
-        "src": "https://cdn4.techly.com.au/wp-content/uploads/2017/08/danytargaryen-799x423.jpg",
+        "src": "/assets/images/daenerys.png",
         "name": "Daenerys Targaryen"
     },
     {
         "id": 3,
-        "src": "https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2017/07/24/08/arya-got.jpg",
+        "src": "/assets/images/arya.png",
         "name": "Arya Stark"
     },
     {
         "id": 4,
-        "src": "http://awoiaf.westeros.org/images/1/1c/Sean_Bean_as_Eddard_Stark.png",
+        "src": "/assets/images/ned.png",
         "name": "Ned Stark"
     },
     {
         "id": 5,
-        "src": "https://geekandsundry.com/wp-content/uploads/2016/02/Cersei-Lannister-game-of-thrones-33804391-1024-576.jpg",
+        "src": "/assets/images/cersei.png",
         "name": "Cersei Lannister"
     },
     {
         "id": 6,
-        "src": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Jaime_Lannister-Nikolaj_Coster-Waldau.jpg/220px-Jaime_Lannister-Nikolaj_Coster-Waldau.jpg",
+        "src": "/assets/images/jaime.png",
         "name": "Jaime Lannister"
     },
     {
         "id": 7,
-        "src": "http://images6.fanpop.com/image/photos/36600000/Joffrey-image-joffrey-36676352-220-242.jpg",
+        "src": "/assets/images/joffrey.png",
         "name": "Joffrey Baratheon"
     },
     {
         "id": 8,
-        "src": "https://vignette.wikia.nocookie.net/gameofthrones/images/5/58/Tyrion_main_s7_e6.jpg",
+        "src": "/assets/images/tyrion.png",
         "name": "Tyrion Lannister"
     },
     {
         "id": 9,
-        "src": "https://imgix.bustle.com/elite-daily/2017/08/28124304/littlefinger-game-thrones.png",
+        "src": "/assets/images/littlefinger.png",
         "name": "Littlefinger"
     },
     {
         "id": 10,
-        "src": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Ygritte-Rose_Leslie.jpg/220px-Ygritte-Rose_Leslie.jpg",
+        "src": "/assets/images/ygritte.png",
         "name": "Ygritte"
     },
     {
         "id": 11,
-        "src": "http://digitalspyuk.cdnds.net/17/36/980x490/landscape-1504608380-sansa.jpg",
+        "src": "/assets/images/sansa.png",
         "name": "Sansa Stark"
     },
     {
         "id": 12,
-        "src": "https://vignette.wikia.nocookie.net/gameofthrones/images/b/bb/TywinLannister-Profile.PNG",
+        "src": "/assets/images/tywin.png",
         "name": "Tywin Lannister"
     }
 ]

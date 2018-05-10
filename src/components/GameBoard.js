@@ -5,18 +5,12 @@ class GameBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            imagesClicked: this.props.images.map(image => {
-                return {
-                    image: image,
-                    clicked: false
-                };
-            }),
-            hello: "Hello"
+            images: this.props.images
         };
     }
 
     shuffle = () => {
-        let array = this.state.imagesClicked;
+        let array = this.state.images;
         var currentIndex = array.length, temporaryValue, randomIndex;
 
         // While there remain elements to shuffle...
@@ -31,31 +25,29 @@ class GameBoard extends React.Component {
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
-        this.setState({imagesClicked: array});
+        this.setState({images: array});
     }
 
-    clickHandle = (id) => {
-        var image = this.state.imagesClicked.find(imageObj => imageObj.image.id === id);
-        var clicked = image.clicked;
+    clickHandle = (clicked) => {
         if(!clicked) {
-            image.clicked = true;
             this.props.scoreAdd();
             this.shuffle();
         }
         else {
-            // this.setState((prevstate, props) => ({imagesClicked: props.images.map(image => {
-            //     return {
-            //         image: image,
-            //         clicked: false
-            //     };
-            // })}));
-            // this.state.imagesClicked = [];
             this.setState((prevstate, props) => (
                 {
-                    imagesClicked: props.images.map(image => ({image: image, clicked: false}))
+                    images: []
                 }
-            ), this.resetBoard);
+            ), this.doNext);
         }
+    }
+
+    doNext() {
+        this.setState((prevstate, props) => (
+            {
+                images: this.props.images
+            }
+        ), this.resetBoard);
     }
 
     resetBoard() {
@@ -66,7 +58,7 @@ class GameBoard extends React.Component {
     render() {
         return (
             <div className="row">
-                {this.state.imagesClicked.map(image => <GameImage key={image.image.id} id={image.image.id} src={image.image.src} alt={image.image.name}
+                {this.state.images.map(image => <GameImage key={image.id} id={image.id} src={image.src} alt={image.name}
                     clickHandle={this.clickHandle}
                     />)}
             </div>
