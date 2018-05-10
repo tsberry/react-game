@@ -4,12 +4,9 @@ import Game from "./components/Game";
 
 
 class App extends Component {
-
-    render() {
-        return (
-            <Game />
-        );
-    }
+    render = () => (
+        <Game />
+    );
 }
 
 export default App;

@@ -15,11 +15,9 @@ class GameImage extends React.Component {
         this.props.clickHandle(clicked);
     }
 
-    render() {
-        return (
-            <img className="game-image img-thumbnail" src={this.props.src} alt={this.props.alt} onClick={this.clickHandle} />
-        );
-    }
+    render = () => (
+        <img className="game-image img-thumbnail" src={this.props.src} alt={this.props.alt} onClick={this.clickHandle} />
+    );
 
 }
 

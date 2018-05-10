@@ -7,10 +7,13 @@ import GameBoard from "./GameBoard";
 import images from "../images.json";
 
 class Game extends React.Component {
-    state = {
-        score: 0,
-        highscore: 0,
-        message: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            score: 0,
+            highscore: 0,
+            message: ""
+        };
     }
 
     scoreAdd = () => {

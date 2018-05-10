@@ -10,7 +10,7 @@ class GameBoard extends React.Component {
     }
 
     shuffle = () => {
-        let array = this.state.images;
+        let array = this.state.images.slice();
         var currentIndex = array.length, temporaryValue, randomIndex;
 
         // While there remain elements to shuffle...
@@ -34,15 +34,13 @@ class GameBoard extends React.Component {
             this.shuffle();
         }
         else {
-            this.setState((prevstate, props) => (
-                {
-                    images: []
-                }
-            ), this.doNext);
+            this.setState({
+                images: []
+            }, this.doNext);
         }
     }
 
-    doNext() {
+    doNext = () => {
         this.setState((prevstate, props) => (
             {
                 images: this.props.images
@@ -50,20 +48,18 @@ class GameBoard extends React.Component {
         ), this.resetBoard);
     }
 
-    resetBoard() {
+    resetBoard = () => {
         this.props.resetGame();
         this.shuffle();
     }
 
-    render() {
-        return (
-            <div className="row">
-                {this.state.images.map(image => <GameImage key={image.id} id={image.id} src={image.src} alt={image.name}
-                    clickHandle={this.clickHandle}
-                />)}
-            </div>
-        );
-    }
+    render = () => (
+        <div className="row">
+            {this.state.images.map(image => <GameImage key={image.id} id={image.id} src={image.src} alt={image.name}
+                clickHandle={this.clickHandle}
+            />)}
+        </div>
+    );
 }
 
 export default GameBoard;
