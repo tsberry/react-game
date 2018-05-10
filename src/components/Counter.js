@@ -8,7 +8,7 @@ class Counter extends React.Component {
         return (
             <div className="row">
                 <p className="counter text-center">
-                    Current Score: {this.props.count}
+                    Current Score: {this.props.score} | High Score: {this.props.highscore}
                 </p>
             </div>
         );
