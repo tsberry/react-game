@@ -2,14 +2,17 @@ import React from "react";
 import GameImage from "./GameImage";
 
 class GameBoard extends React.Component {
-    state = {
-        imagesClicked: this.props.images.map(image => {
-            return {
-                image: image,
-                clicked: false
-            };
-        }),
-        hello: "Hello"
+    constructor(props) {
+        super(props);
+        this.state = {
+            imagesClicked: this.props.images.map(image => {
+                return {
+                    image: image,
+                    clicked: false
+                };
+            }),
+            hello: "Hello"
+        };
     }
 
     shuffle = () => {
@@ -37,16 +40,26 @@ class GameBoard extends React.Component {
         if(!clicked) {
             image.clicked = true;
             this.props.scoreAdd();
+            this.shuffle();
         }
         else {
-            this.setState({imagesClicked: this.props.images.map(image => {
-                return {
-                    image: image,
-                    clicked: false
-                };
-            })});
-            this.props.resetGame();
+            // this.setState((prevstate, props) => ({imagesClicked: props.images.map(image => {
+            //     return {
+            //         image: image,
+            //         clicked: false
+            //     };
+            // })}));
+            // this.state.imagesClicked = [];
+            this.setState((prevstate, props) => (
+                {
+                    imagesClicked: props.images.map(image => ({image: image, clicked: false}))
+                }
+            ), this.resetBoard);
         }
+    }
+
+    resetBoard() {
+        this.props.resetGame();
         this.shuffle();
     }
 
